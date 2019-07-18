@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb://Toreckk:test123@ds351807.mlab.com:51807/blockchain",
+    "jwtSecret": "sl_myJwtSecret"
+}
