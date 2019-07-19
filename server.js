@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const config = require("config");
 const JayCoin = require("./BlockchainService/Blockchain");
 
-const users = require("./routes/api/users");
+const wallet = require("./routes/api/wallet");
 
 const app = express();
 
@@ -24,7 +24,7 @@ mongoose
   .catch(err => console.log(err));
 
 //Use Routes
-app.use("/api/users", users);
+app.use("/api/wallet", wallet);
 
 const port = process.env.PORT || 5000;
 
