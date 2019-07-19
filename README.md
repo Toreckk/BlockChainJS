@@ -1,2 +1,2 @@
 # SimpleBlockChain
- Implementing a simplified blockchain to learn how it works.
+ Implementing a  blockchain in javascript to learn how it works.
