@@ -11,7 +11,7 @@ const JayCoin = require("../../BlockchainService/Blockchain");
 //User Model
 const Wallet = require("../../models/Wallet");
 
-//@route POST api/users
+//@route POST api/wallet
 //@desc Create a new wallet
 //@access Public
 router.post("/", (req, res) => {
@@ -80,6 +80,17 @@ router.post("/", (req, res) => {
       });
     });
   });
+});
+
+//@route GET api/wallet/balance
+//@desc Get the balance of a given wallet
+//@access Public
+router.get("/balance/:publicKey", (req, res) => {
+  const { publicKey } = req.params;
+  console.log("Public key: " + publicKey);
+  const balance = JayCoin.getBalance(publicKey);
+  console.log("Balance: " + balance);
+  res.json({ balance });
 });
 
 module.exports = router;
