@@ -48,7 +48,6 @@ class Blockchain {
       miningRewardAddress
     );
     this.pendingTransactions.push(rewardTx);
-    console.log(JSON.stringify(this.pendingTransactions));
     let block = new Block(this.pendingTransactions);
     block.mineBlock(this.difficulty);
 
@@ -68,8 +67,19 @@ class Blockchain {
       throw new Error("Transaction amount should be higher than 0");
     }
 
-    if (transaction.amount > this.getBalance(transaction.fromAddress)) {
-      throw new Error("Not enough Jaycoins!!!");
+    let pendingTxBalance = 0;
+
+    for (const tx of this.pendingTransactions) {
+      if (tx.fromAddress === transaction.fromAddress) {
+        pendingTxBalance -= parseInt(tx.amount);
+      }
+    }
+
+    if (
+      transaction.amount >
+      this.getBalance(transaction.fromAddress) + pendingTxBalance
+    ) {
+      throw new Error("Not enough Jaycoins.");
     }
 
     this.pendingTransactions.push(transaction);

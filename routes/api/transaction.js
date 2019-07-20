@@ -28,7 +28,9 @@ router.post("/", auth, (req, res) => {
       JayCoin.addTransaction(tx);
       return res.json(tx);
     })
-    .catch(err => res.json(JSON.stringify(err)));
+    .catch(err => {
+      return res.json({ msg: err.message });
+    });
 });
 
 //@route GET /transaction/pending
