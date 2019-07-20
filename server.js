@@ -33,6 +33,7 @@ app.use("/address", address);
 app.use("/mine", miner);
 app.use("/blockchain", bchain);
 app.use("/transaction", transaction);
+app.use("/auth", require("./routes/api/auth"));
 
 const port = process.env.PORT || 5000;
 

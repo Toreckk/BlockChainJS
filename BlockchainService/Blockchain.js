@@ -68,6 +68,10 @@ class Blockchain {
       throw new Error("Transaction amount should be higher than 0");
     }
 
+    if (transaction.amount > this.getBalance(transaction.fromAddress)) {
+      throw new Error("Not enough Jaycoins!!!");
+    }
+
     this.pendingTransactions.push(transaction);
   }
 

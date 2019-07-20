@@ -26,9 +26,16 @@ router.post("/", auth, (req, res) => {
       );
       tx.signTransaction(ec.keyFromPrivate(wallet.privateKey));
       JayCoin.addTransaction(tx);
+      return res.json(tx);
     })
-    .then(() => res.json(tx))
-    .catch(err => res.json(err));
+    .catch(err => res.json(JSON.stringify(err)));
+});
+
+//@route GET /transaction/pending
+//@desc Gets pending transactions
+//@access Public
+router.get("/pending", (req, res) => {
+  return res.json(JSON.stringify(JayCoin.getPendingTransactions()));
 });
 
 module.exports = router;
