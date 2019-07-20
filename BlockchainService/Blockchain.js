@@ -17,6 +17,30 @@ class Blockchain {
     return this.chain[this.chain.length - 1];
   }
 
+  getChain() {
+    return this.chain;
+  }
+
+  getPendingTransactions() {
+    return this.pendingTransactions;
+  }
+
+  setDifficulty(difficulty) {
+    this.difficulty = difficulty;
+  }
+
+  getDifficulty() {
+    return this.difficulty;
+  }
+
+  setMiningReward(miningReward) {
+    this.miningReward = miningReward;
+  }
+
+  getMiningReward() {
+    return this.MiningReward;
+  }
+
   minePendingTransactions(miningRewardAddress) {
     const rewardTx = new Transaction(
       this.miningReward,
@@ -77,5 +101,5 @@ class Blockchain {
     return true;
   }
 }
-//let Jaycoin = new Blockchain();
+
 module.exports = new Blockchain();
