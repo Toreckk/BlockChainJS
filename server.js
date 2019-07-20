@@ -6,6 +6,8 @@ const JayCoin = require("./BlockchainService/Blockchain");
 
 const wallet = require("./routes/api/wallet");
 const address = require("./routes/api/address");
+const miner = require("./routes/api/miner");
+const bchain = require("./routes/api/blockchain");
 
 const app = express();
 
@@ -27,6 +29,8 @@ mongoose
 //Use Routes
 app.use("/wallet", wallet);
 app.use("/address", address);
+app.use("/mine", miner);
+app.use("/blockchain", bchain);
 
 const port = process.env.PORT || 5000;
 
