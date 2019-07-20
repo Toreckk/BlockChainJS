@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const EC = require("elliptic").ec;
 const ec = new EC("secp256k1");
 
-//User Model
+//Wallet Model
 const Wallet = require("../../models/Wallet");
 
 //@route POST api/wallet

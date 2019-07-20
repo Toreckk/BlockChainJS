@@ -8,6 +8,7 @@ const wallet = require("./routes/api/wallet");
 const address = require("./routes/api/address");
 const miner = require("./routes/api/miner");
 const bchain = require("./routes/api/blockchain");
+const transaction = require("./routes/api/transaction");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use("/wallet", wallet);
 app.use("/address", address);
 app.use("/mine", miner);
 app.use("/blockchain", bchain);
+app.use("/transaction", transaction);
 
 const port = process.env.PORT || 5000;
 
