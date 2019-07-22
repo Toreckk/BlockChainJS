@@ -3,6 +3,8 @@
   border: none;
   outline: none;
   padding: 16px 20px;
+  font-weight: 500;
+  margin-left: -1em;
 }
 .btnLogin:hover {
   background-color: Transparent;
@@ -14,6 +16,7 @@
   border: 1px solid white;
   border-radius: 8px;
   padding: 16px 20px;
+  font-weight: 500;
 }
 .btnSignup:hover {
   background-color: #44a192;
@@ -27,4 +30,17 @@
 .NavBarButtons {
   margin-top: 1em;
   color: white;
+  font-weight: 500;
+  outline: none;
+  background-color: Transparent;
+  margin-right: 1.5em;
+}
+
+.divider {
+  margin-right: 1.5em;
+  margin-top: 1.5em;
+  color: #6d747b;
+  font-weight: 500;
+  display: inline-block;
+  transform: scale(1.2, 1.5);
 }

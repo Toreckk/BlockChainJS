@@ -29,27 +29,40 @@ class AppNavbar extends Component {
         <Navbar color="dark" dark expand="md">
           <Container>
             <NavbarBrand href="/">
-              <FaPiedPiperHat className="JaycoinIcon" />
+              <FaPiedPiperHat className="JaycoinIcon" size="1.5em" />
               Jaycoin
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="#" className="NavBarButtons">
+                  <NavLink
+                    href="#"
+                    style={{ color: "white" }}
+                    className="NavBarButtons"
+                  >
                     Explorer
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#" className="NavBarButtons">
+                  <NavLink
+                    href="#"
+                    style={{ color: "white" }}
+                    className="NavBarButtons"
+                  >
                     Mining
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#" className="NavBarButtons">
-                    Learn
+                  <NavLink
+                    href="#"
+                    style={{ color: "white" }}
+                    className="NavBarButtons"
+                  >
+                    Features
                   </NavLink>
                 </NavItem>
+                <p className="divider">|</p>
                 <NavItem>
                   <NavLink href="#">
                     <Button className="btnSignup">Sign Up</Button>
