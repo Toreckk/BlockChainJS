@@ -6,17 +6,19 @@ const Landing = () => {
     <Fragment>
       <section className="landing-intro">
         <Container>
-          <Row>
-            <Col xs="5" className="intro-text">
-              <h1 className="mb-3">BlockchainJS</h1>
+          <Row className="intro-row">
+            <Col xs="6" className="intro-text">
+              <h1 className="mb-4">BlockchainJS</h1>
               <h5 className="mb-5">
-                A Javascript blockhain implementation that allows you to send,
+                A Javascript blockchain implementation that allows you to send,
                 receive, store and mine the fictional Jaycoin currency for
                 educational purposes
               </h5>
-              <button className="getWalletbtn">Get a Free Wallet</button>
+              <div>
+                <button className="getWalletbtn">Get a Free Wallet</button>
+              </div>
             </Col>
-            <Col xs="7">
+            <Col xs="6">
               <img
                 src="https://res.cloudinary.com/toreckk/image/upload/v1563817211/getstarted2x.webp"
                 class="webpImg"
