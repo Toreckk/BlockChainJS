@@ -7,8 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
+  Button
 } from "reactstrap";
+import { FaPiedPiperHat } from "react-icons/fa";
 
 class AppNavbar extends Component {
   state = {
@@ -24,15 +26,38 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar color="dark" dark expand="md">
           <Container>
-            <NavbarBrand href="/">Jaycoin</NavbarBrand>
+            <NavbarBrand href="/">
+              <FaPiedPiperHat className="JaycoinIcon" />
+              Jaycoin
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="https://github.com/Toreckk/BlockChainJS">
-                    Github
+                  <NavLink href="#" className="NavBarButtons">
+                    Explorer
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#" className="NavBarButtons">
+                    Mining
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#" className="NavBarButtons">
+                    Learn
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#">
+                    <Button className="btnSignup">Sign Up</Button>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#">
+                    <Button className="btnLogin">Login</Button>
                   </NavLink>
                 </NavItem>
               </Nav>
