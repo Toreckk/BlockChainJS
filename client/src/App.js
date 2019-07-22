@@ -1,17 +1,18 @@
-import React, { Component } from "react";
-import AppNavbar from "./components/AppNavbar";
-
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <AppNavbar />
-      </div>
-    );
-  }
-}
+import AppNavbar from "./components/AppNavbar";
+import Landing from "./components/Landing";
+
+const App = () => (
+  <Router>
+    <Fragment>
+      <AppNavbar />
+      <Route exact path="/" component={Landing} />
+    </Fragment>
+  </Router>
+);
 
 export default App;
