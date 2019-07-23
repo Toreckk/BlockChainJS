@@ -77,6 +77,13 @@ const Landing = () => {
                 text="Start sending and receiving Jaycoins"
               />
             </Col>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563922291/BlockchainJS/Path/ledger.webp"
+                title="Explorer"
+                text="Search for blocks or transactions in the blockchain"
+              />
+            </Col>
 
             <Col sm="12" md="4">
               <FeatureCard
@@ -85,13 +92,7 @@ const Landing = () => {
                 text="Learn how this blockchain was implemented"
               />
             </Col>
-            <Col sm="12" md="4">
-              <FeatureCard
-                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/nomoney.webp"
-                title="Risk free"
-                text="You won't be asked for real life information"
-              />
-            </Col>
+
             <Col sm="12" md="4">
               <FeatureCard
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/get-started-meet_our_company.png"
