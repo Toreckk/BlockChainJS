@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
+import FeatureCard from "../components/FeatureCard";
 
 const Landing = () => {
   return (
@@ -7,7 +8,7 @@ const Landing = () => {
       <section className="landing-intro">
         <Container>
           <Row className="intro-row">
-            <Col xs="6" className="intro-text">
+            <Col xs="5" className="intro-text">
               <h1 className="mb-4">BlockchainJS</h1>
               <h5 className="mb-5">
                 A Javascript blockchain implementation that allows you to send,
@@ -15,10 +16,10 @@ const Landing = () => {
                 educational purposes
               </h5>
               <div>
-                <button className="getWalletbtn">Get a Free Wallet</button>
+                <button className="getWalletbtn">Get a Wallet</button>
               </div>
             </Col>
-            <Col xs="6">
+            <Col xs="7">
               <img
                 src="https://res.cloudinary.com/toreckk/image/upload/v1563817211/getstarted2x.webp"
                 class="webpImg"
@@ -51,19 +52,65 @@ const Landing = () => {
           </div>
         </Container>
       </section>
-      <section className="landing-mid">
-        <Container>
+      <section className="mt-5">
+        <Container className="landing-learn d-flex justify-content-center">
+          <h1 className="font-weight-bold mb-5">How to use Jaycoins</h1>
           <Row>
-            <Col xs="6">
-              <h1>Objective</h1>
-              <p>
-                The objective of this project is to learn how a blockchain is
-                built and how it works.
-              </p>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/wallet.webp"
+                title="Wallet"
+                text="Create a wallet and start using Jaycoins"
+              />
             </Col>
-            <Col xs="6">.col-6</Col>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/pool.webp"
+                title="Mine"
+                text="Verify transactions and start earning Jaycoins"
+              />
+            </Col>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/get-started-buy_sell.png"
+                title="Transactions"
+                text="Start sending and receiving Jaycoins"
+              />
+            </Col>
+
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/faq.png"
+                title="FAQ"
+                text="Learn how this blockchain was implemented"
+              />
+            </Col>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/nomoney.webp"
+                title="Risk free"
+                text="You won't be asked for real life information"
+              />
+            </Col>
+            <Col sm="12" md="4">
+              <FeatureCard
+                imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/get-started-meet_our_company.png"
+                title="Community"
+                text="Join the bigger blockchain community"
+              />
+            </Col>
           </Row>
         </Container>
+      </section>
+      <section
+        style={{ backgroundColor: "#111D33", color: "#FFF", fontSize: "40px" }}
+        className="pt-5 pb-4 d-flex align-items-center flex-column"
+      >
+        <h1 className="mb-5">Need help with anything else?</h1>
+        <div d-flex justify-content-center>
+          <button className="getWalletbtn">Read the Wiki</button>
+          <button className="getWalletbtn ml-5">Contact us</button>
+        </div>
       </section>
     </Fragment>
   );

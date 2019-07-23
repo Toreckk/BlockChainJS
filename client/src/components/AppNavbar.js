@@ -65,12 +65,12 @@ class AppNavbar extends Component {
                 <p className="divider">|</p>
                 <NavItem>
                   <NavLink href="#">
-                    <Button className="btnSignup">Sign Up</Button>
+                    <button className="btnSignup">Sign Up</button>
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#">
-                    <Button className="btnLogin">Login</Button>
+                    <button className="btnLogin">Login</button>
                   </NavLink>
                 </NavItem>
               </Nav>

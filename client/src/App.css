@@ -1,5 +1,14 @@
+body {
+  font-family: "Titillium Web", sans-serif;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 1.8em;
+  font-size: 16px;
+}
+
 .btnLogin {
   background-color: Transparent;
+  color: white;
   border: none;
   outline: none;
   padding: 16px 20px;
@@ -17,6 +26,7 @@
   border-radius: 8px;
   padding: 16px 20px;
   font-weight: 500;
+  color: white;
 }
 .btnSignup:hover {
   background-color: #44a192;
@@ -68,10 +78,24 @@
   align-items: center;
 }
 
-.landing-mid {
-  background-image: linear-gradient(330deg, #707883 0%, #1b2831 100%);
-  height: 70vh;
-  position: relative;
+.landing-learn {
+  background-color: #fbfcff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-footer {
+  background-color: #111d33;
+}
+
+.feature-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 50px 0px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 3em 1em 1em 1em;
 }
 
 .intro-row {
