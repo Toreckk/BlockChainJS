@@ -28,6 +28,29 @@ const Landing = () => {
           </Row>
         </Container>
       </section>
+      <section
+        style={{ backgroundColor: "#111D33", color: "#FFF" }}
+        className="pt-3 pb-3"
+      >
+        <Container className="landing-stats">
+          <div className="landing-stat">
+            <h2>20</h2>
+            <h5>Blocks</h5>
+          </div>
+          <div className="landing-stat">
+            <h2>300</h2>
+            <h5>Transactions</h5>
+          </div>
+          <div className="landing-stat">
+            <h2>5</h2>
+            <h5>Wallets</h5>
+          </div>
+          <div className="landing-stat">
+            <h2>10,000</h2>
+            <h5>Coins</h5>
+          </div>
+        </Container>
+      </section>
       <section className="landing-mid">
         <Container>
           <Row>

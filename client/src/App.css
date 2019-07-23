@@ -49,11 +49,23 @@
 .landing-intro {
   background-color: #144599;
   color: white;
-  display: flex;
   align-items: center;
   float: none;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+
+.landing-stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.landing-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .landing-mid {
