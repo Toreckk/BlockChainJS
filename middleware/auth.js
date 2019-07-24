@@ -13,7 +13,6 @@ function auth(req, res, next) {
     const decoded = jwt.verify(token, config.get("jwtSecret"));
     // Add wallet from payload
     req.wallet = decoded;
-    console.log("WALLET: " + req.wallet);
     next();
   } catch (e) {
     res.status(400).json({ msg: "Token is not valid" });

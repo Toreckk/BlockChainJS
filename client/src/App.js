@@ -11,14 +11,11 @@ import Register from "./components/auth/Register";
 const App = () => (
   <Router>
     <Fragment>
-      <AppNavbar />
       <Route exact path="/" component={Landing} />
-      <section className="container">
-        <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
-      </section>
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+      </Switch>
     </Fragment>
   </Router>
 );

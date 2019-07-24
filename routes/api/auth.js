@@ -34,12 +34,7 @@ router.post("/", (req, res) => {
           if (err) throw err;
 
           res.json({
-            token,
-            wallet: {
-              id: wallet.id,
-              name: wallet.name,
-              email: wallet.email
-            }
+            token
           });
         }
       );

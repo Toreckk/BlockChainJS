@@ -2,10 +2,12 @@ import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
 import FeatureCard from "../components/FeatureCard";
 import { Link } from "react-router-dom";
+import AppNavbar from "../components/AppNavbar";
 
 const Landing = () => {
   return (
     <Fragment>
+      <AppNavbar />
       <section className="landing-intro">
         <Container>
           <Row className="intro-row">

@@ -11,7 +11,7 @@ import {
 const FeatureCard = props => {
   return (
     <Card
-      className="feature-card shadow  d-flex align-items-center mb-4"
+      className="feature-card shadow  d-flex align-items-center mb-5"
       text-center
     >
       <CardImg
