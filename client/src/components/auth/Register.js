@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
-import { Card, Button, Form, FormGroup, Label, Imput } from "reactstrap";
-import axios from "axios";
+import { Card } from "reactstrap";
 
 const Register = () => {
   const [formData, setFormData] = useState({
