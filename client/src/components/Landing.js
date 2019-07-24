@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
 import FeatureCard from "../components/FeatureCard";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -15,9 +16,12 @@ const Landing = () => {
                 receive, store and mine the fictional Jaycoin currency for
                 educational purposes
               </h5>
-              <div>
-                <button className="getWalletbtn">Get a Wallet</button>
-              </div>
+              <Link
+                to="/register"
+                className="getWalletbtn d-flex align-items-center justify-content-center"
+              >
+                Get a Wallet
+              </Link>
             </Col>
             <Col xs="7">
               <img

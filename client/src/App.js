@@ -5,12 +5,20 @@ import "./App.css";
 
 import AppNavbar from "./components/AppNavbar";
 import Landing from "./components/Landing";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
 const App = () => (
   <Router>
     <Fragment>
       <AppNavbar />
       <Route exact path="/" component={Landing} />
+      <section className="container">
+        <Switch>
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </section>
     </Fragment>
   </Router>
 );

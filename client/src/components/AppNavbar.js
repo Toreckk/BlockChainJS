@@ -10,6 +10,7 @@ import {
   Container,
   Button
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 
 class AppNavbar extends Component {
@@ -28,7 +29,7 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="dark" dark expand="md">
           <Container>
-            <NavbarBrand href="/">
+            <NavbarBrand tag={Link} to="/">
               <FaPiedPiperHat className="JaycoinIcon" size="1.5em" />
               Jaycoin
             </NavbarBrand>
@@ -64,13 +65,13 @@ class AppNavbar extends Component {
                 </NavItem>
                 <p className="divider">|</p>
                 <NavItem>
-                  <NavLink href="#">
-                    <button className="btnSignup">Sign Up</button>
+                  <NavLink tag={Link} to="/register" className="btnSignup">
+                    Sign Up
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">
-                    <button className="btnLogin">Login</button>
+                  <NavLink tag={Link} to="/login" className="btnLogin">
+                    Login
                   </NavLink>
                 </NavItem>
               </Nav>
