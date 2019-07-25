@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 import { Card } from "reactstrap";
+import { connect } from "react-redux";
+import { setAlert } from "../../actions/alerts";
+import PropTypes from "prop-types";
+import Alert from "../layout/Alert";
 
-const Register = () => {
+const Register = props => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,7 +23,7 @@ const Register = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Passwords do not match");
+      props.setAlert("Passwords do not match", "danger");
     } else {
       console.log(formData);
     }
@@ -41,6 +45,7 @@ const Register = () => {
       </div>
       <div className="registerform">
         <Card className="authCard">
+          <Alert />
           <h3 className="pb-3">Create a Wallet</h3>
           <form onSubmit={e => onSubmit(e)}>
             <div className="d-flex flex-column mb-3">
@@ -100,4 +105,11 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { setAlert }
+)(Register);

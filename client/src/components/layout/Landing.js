@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import { Container, Row, Col } from "reactstrap";
-import FeatureCard from "../components/FeatureCard";
+import FeatureCard from "./FeatureCard";
 import { Link } from "react-router-dom";
-import AppNavbar from "../components/AppNavbar";
+import AppNavbar from "./AppNavbar";
 
 const Landing = () => {
   return (
