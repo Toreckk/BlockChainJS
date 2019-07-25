@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Titillium Web", sans-serif;
   font-size: normal;
@@ -22,7 +25,6 @@ Home Page
 }
 .btnLogin:hover {
   background-color: Transparent;
-  color: #44a192;
 }
 
 .btnSignup {
@@ -197,6 +199,7 @@ Register
 .authCard label {
   font-weight: 500;
 }
+
 .authCard input {
   font-weight: 500;
   font-size: 400 13.3333px Arial;

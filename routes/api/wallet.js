@@ -26,7 +26,7 @@ router.post(
       "Please enter a password with 6 or more characters"
     ).isLength({ min: 6 })
   ],
-  async (req, res) => {
+  (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -38,9 +38,9 @@ router.post(
       email
     }).then(wallet => {
       if (wallet)
-        return res.status(400).json({
-          msg: "User already exists"
-        });
+        return res
+          .status(400)
+          .json({ errors: [{ msg: "User already exists" }] });
       const key = ec.genKeyPair();
 
       const publicKey = key.getPublic("hex");
