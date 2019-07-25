@@ -28,7 +28,7 @@ const Landing = () => {
             <Col xs="7">
               <img
                 src="https://res.cloudinary.com/toreckk/image/upload/v1563817211/getstarted2x.webp"
-                class="webpImg"
+                className="webpImg"
                 alt="Blockchain intro"
               />
             </Col>
@@ -52,7 +52,7 @@ const Landing = () => {
             <h2>5</h2>
             <h5>Wallets</h5>
           </div>
-          <div className="landing-stat">
+          <div className="landing-stats">
             <h2>10,000</h2>
             <h5>Coins</h5>
           </div>

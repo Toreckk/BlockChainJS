@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 import { Card } from "reactstrap";
+import { connect } from "react-redux";
+import { setAlert } from "../../actions/alerts";
+import { login } from "../../actions/auth";
+import PropTypes from "prop-types";
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -16,8 +20,12 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(formData);
+    login(email, password);
   };
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <div>
@@ -78,4 +86,16 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(Login);

@@ -29,7 +29,7 @@ router.post("/", auth, (req, res) => {
       return res.json(tx);
     })
     .catch(err => {
-      return res.json({ msg: err.message });
+      return res.status(500).json({ msg: err.message });
     });
 });
 

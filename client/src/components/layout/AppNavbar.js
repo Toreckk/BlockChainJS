@@ -7,8 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container,
-  Button
+  Container
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
