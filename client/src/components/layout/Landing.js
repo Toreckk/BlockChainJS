@@ -52,7 +52,7 @@ const Landing = () => {
             <h2>5</h2>
             <h5>Wallets</h5>
           </div>
-          <div className="landing-stats">
+          <div className="landing-stat">
             <h2>10,000</h2>
             <h5>Coins</h5>
           </div>

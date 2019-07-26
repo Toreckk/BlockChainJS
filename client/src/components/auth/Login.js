@@ -21,10 +21,9 @@ const Login = ({ login, isAuthenticated }) => {
     e.preventDefault();
     login(email, password);
   };
-  //Redirect if logged in
-  //TODO: Change redirect to dashboard/ home
+
   if (isAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
