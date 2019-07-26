@@ -67,6 +67,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/wallet.webp"
                 title="Wallet"
                 text="Create a wallet and start using Jaycoins"
+                forwardto="/register"
               />
             </Col>
             <Col sm="12" md="4">
@@ -74,6 +75,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/pool.webp"
                 title="Mine"
                 text="Verify transactions and start earning Jaycoins"
+                forwardto="/"
               />
             </Col>
             <Col sm="12" md="4">
@@ -81,6 +83,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/get-started-buy_sell.png"
                 title="Transactions"
                 text="Start sending and receiving Jaycoins"
+                forwardto="/"
               />
             </Col>
             <Col sm="12" md="4">
@@ -88,6 +91,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563922291/BlockchainJS/Path/ledger.webp"
                 title="Explorer"
                 text="Search for blocks or transactions in the blockchain"
+                forwardto="/"
               />
             </Col>
 
@@ -96,6 +100,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/faq.png"
                 title="FAQ"
                 text="Learn how this blockchain was implemented"
+                forwardto="/"
               />
             </Col>
 
@@ -104,6 +109,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914502/BlockchainJS/Path/get-started-meet_our_company.png"
                 title="Community"
                 text="Join the bigger blockchain community"
+                forwardto="/"
               />
             </Col>
           </Row>

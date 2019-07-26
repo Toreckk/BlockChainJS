@@ -172,6 +172,7 @@ Register
   justify-content: flex-start;
 }
 .autheader {
+  background-color: rgb(13, 53, 120);
   color: white;
   padding: 20px 20px;
   font-weight: 500;
@@ -218,6 +219,64 @@ Register
   font-size: 18px;
 }
 
+/*
+Dashboard
+*/
+.balance-card {
+  border-radius: 4px;
+}
+.balance-card-title {
+  color: #494949;
+  padding: 1em;
+  border: 1px solid #d5d5d5;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px 4px 0px 0px;
+}
+.balance-card-amount {
+  color: #0e3578;
+  padding: 1em;
+  border-left: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.balance-card-button {
+  background-color: transparent;
+  color: rgb(12, 108, 242);
+  padding: 1em;
+  border: 1px solid #d5d5d5;
+  border-radius: 0px 0px 4px 4px;
+  outline: none;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+}
+.balance-card-button:hover {
+  background-color: rgb(216, 235, 253);
+}
+.balance-card-button:focus {
+  outline: 0;
+}
+.transactionc-btn {
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(13, 53, 120);
+  border-radius: 4px;
+  border: 1px solid rgb(204, 210, 222);
+  padding: 0.5em;
+}
+.transactionc-btn:hover {
+  background-color: rgb(216, 235, 253);
+}
+
+/*
+Smaller Screens
+*/
 @media (max-width: 479px) {
   .authCard {
     width: 90%;

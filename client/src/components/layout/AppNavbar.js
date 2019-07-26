@@ -86,7 +86,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                   Features
                 </NavLink>
               </NavItem>
-              <p className="divider">|</p>
+              <div className="separator" />
               {!loading && (
                 <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
               )}

@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
-
+import { Link } from "react-router-dom";
 const FeatureCard = props => {
   return (
     <Card
-      className="feature-card shadow  d-flex align-items-center mb-5"
+      className="feature-card shadow d-flex align-items-center mb-5"
       text-center
     >
       <CardImg
@@ -21,9 +21,12 @@ const FeatureCard = props => {
           {props.title}
         </CardTitle>
         <CardText style={{ fontSize: "20px" }}>{props.text}</CardText>
-        <button style={{ width: "100%" }} className="getWalletbtn">
+        <Link
+          to={props.forwardto}
+          className="getWalletbtn d-flex align-items-center justify-content-center"
+        >
           View
-        </button>
+        </Link>
       </CardBody>
     </Card>
   );

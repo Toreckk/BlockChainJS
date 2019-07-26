@@ -37,7 +37,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <div className="registerPage">
-      <div className="autheader d-fex">
+      <div className="autheader d-flex">
         <Link className="logoName registerBtns" to="/">
           <FaPiedPiperHat className="JaycoinIcon" size="1.5em" />
           Jaycoin
