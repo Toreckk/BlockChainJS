@@ -10,15 +10,12 @@ const DashboardCard = props => {
         className="balance-card-title d-flex justify-content-start"
         syle={{ fontWeight: "500", color: "#494949" }}
       >
-        TOTAL BALANCE
+        ACCOUNT INFORMATION
       </div>
-      <div className="balance-card-amount d-flex flex-direction-column align-items-center">
-        <FaPiedPiperHat className="JaycoinIcon" size="1.75em" />
-        {props.amount}
-        <p style={{ marginRight: "0.4em" }} />
-        Jaycoins
-      </div>
-      <button className="balance-card-button">Exchange Coin</button>
+      <div
+        className="balance-card-amount d-flex flex-direction-column align-items-center"
+        style={{ height: "700px" }}
+      />
     </Card>
   );
 };

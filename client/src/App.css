@@ -177,7 +177,7 @@ Register
   padding: 20px 20px;
   font-weight: 500;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .registerform {
@@ -272,6 +272,26 @@ Dashboard
 }
 .transactionc-btn:hover {
   background-color: rgb(216, 235, 253);
+}
+
+.wallet-card-button {
+  background-color: transparent;
+  color: rgb(12, 108, 242);
+  padding: 1em;
+  border-left: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+  border-bottom: none;
+  outline: none;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+}
+.wallet-card-button:hover {
+  background-color: rgb(216, 235, 253);
+}
+.wallet-card-button:focus {
+  outline: 0;
 }
 
 /*

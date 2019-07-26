@@ -27,7 +27,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const authLinks = (
     <NavItem>
-      <NavLink onClick={logout} tag={Link} to="/" className="btnLogin">
+      <NavLink onClick={logout} tag={Link} to="/" className="btnLogin ml-2">
         Log Out
       </NavLink>
     </NavItem>
@@ -86,7 +86,16 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                   Features
                 </NavLink>
               </NavItem>
-              <div className="separator" />
+              <NavItem>
+                <NavLink
+                  href="/dashboard"
+                  style={{ color: "white" }}
+                  className="NavBarButtons"
+                >
+                  Dashboard
+                </NavLink>
+              </NavItem>
+              <div className="divider">|</div>
               {!loading && (
                 <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
               )}

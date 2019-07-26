@@ -10,21 +10,36 @@ import {
   CardBody,
   CardTitle
 } from "reactstrap";
+import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 import BalanceCard from "./BalanceCard";
 import WalletCard from "./WalletCard";
 import DashboardCard from "./DashboardCard";
+import { logout } from "../../actions/auth";
 
 const Dashboard = props => {
   return (
-    <div style={{ backgroundColor: "#F5F5F5", height: "100vh" }}>
-      <div className="autheader d-flex justify-content-start">
+    <div
+      className="d-flex flex-column "
+      style={{ backgroundColor: "#F5F5F5", height: "100vh" }}
+    >
+      <div className="autheader">
         <Link className="logoName registerBtns d-flex" to="/">
           <FaPiedPiperHat className="JaycoinIcon" size="1.5em" />
           <p className="d-xs-none mt-3" />
           Jaycoin
         </Link>
+        <div className="d-flex flex-row align-items-center">
+          <Link
+            tag={Link}
+            onClick={props.logout}
+            to="/"
+            className="registerBtns registerToLoginbtn ml-3 "
+          >
+            Logout
+          </Link>
+        </div>
       </div>
       <Container>
         <Row className="mt-5">
@@ -45,6 +60,11 @@ const Dashboard = props => {
   );
 };
 
-Dashboard.propTypes = {};
+Dashboard.propTypes = {
+  logout: PropTypes.func.isRequired
+};
 
-export default Dashboard;
+export default connect(
+  null,
+  { logout }
+)(Dashboard);
