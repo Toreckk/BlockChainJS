@@ -1,21 +1,52 @@
-import React from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import React, { Container } from "react";
+import {
+  Nav,
+  NavItem,
+  NavLink,
+  Card,
+  Button,
+  CardTitle,
+  CardText,
+  Row,
+  Col
+} from "reactstrap";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
+import SendModal from "./SendModal";
+import "react-tabs/style/react-tabs.css";
 
 const DashboardCard = props => {
   return (
-    <Card className="balance-card shadow d-flex" text-center>
+    <Card className="dashboard-card shadow" text-center>
       <div
         className="balance-card-title d-flex justify-content-start"
         syle={{ fontWeight: "500", color: "#494949" }}
       >
-        ACCOUNT INFORMATION
+        RECENT ACTIVITY
       </div>
       <div
-        className="balance-card-amount d-flex flex-direction-column align-items-center"
-        style={{ height: "700px" }}
-      />
+        className="recent-activity-card d-flex flex-direction-row"
+        style={{ minHeight: "500px" }}
+      >
+        <Tabs className="tabs">
+          <TabList className="tab-list">
+            <Tab className="tab-s">Sent</Tab>
+            <Tab className="tab-s">Received</Tab>
+            <Tab className="tab-s">Mined</Tab>
+          </TabList>
+
+          <TabPanel>
+            <h2>Sent!</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Received!</h2>
+          </TabPanel>
+          <TabPanel>
+            <h2>Mined!</h2>
+          </TabPanel>
+        </Tabs>
+      </div>
     </Card>
   );
 };

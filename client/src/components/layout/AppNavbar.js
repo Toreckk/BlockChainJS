@@ -36,7 +36,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <div className="d-flex flex-row">
       <NavItem>
-        <NavLink tag={Link} to="/register" className="btnSignup">
+        <NavLink className="btnSignup" tag={Link} to="/register">
           Sign Up
         </NavLink>
       </NavItem>
@@ -52,7 +52,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <div>
       <Navbar color="dark" dark expand="md">
         <Container>
-          <NavbarBrand tag={Link} to="/">
+          <NavbarBrand className="navBrand" tag={Link} to="/">
             <FaPiedPiperHat className="JaycoinIcon" size="1.5em" />
             Jaycoin
           </NavbarBrand>

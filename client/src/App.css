@@ -19,7 +19,7 @@ Home Page
   padding: 16px 20px;
   font-weight: 500;
   margin-left: -1em;
-  margin-top: 1em;
+  margin-top: 0.5em;
   display: inline-block;
 }
 .btnLogin:hover {
@@ -33,7 +33,7 @@ Home Page
   padding: 16px 20px;
   font-weight: 500;
   color: white;
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-right: 2em;
   display: inline-block;
 }
@@ -48,7 +48,7 @@ Home Page
 }
 
 .NavBarButtons {
-  margin-top: 1em;
+  margin-top: 0.5em;
   font-weight: 500;
   outline: none;
   background-color: Transparent;
@@ -57,11 +57,15 @@ Home Page
 
 .divider {
   margin-right: 1.5em;
-  margin-top: 1.5em;
+  margin-top: 1em;
   color: #6d747b;
   font-weight: 500;
   display: inline-block;
   transform: scale(1.2, 1.5);
+}
+
+.navBrand {
+  margin-top: 0.5em;
 }
 
 .landing-intro {
@@ -130,6 +134,7 @@ Home Page
   border-radius: 4px;
   margin-bottom: 1rem;
   vertical-align: middle;
+  z-index: 9999999;
 }
 
 .getWalletbtn:hover {
@@ -293,6 +298,39 @@ Dashboard
 .wallet-card-button:focus {
   outline: 0;
 }
+.recent-activity-card {
+  color: #0e3578;
+  border-left: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+}
+.tabs {
+  width: 100% !important;
+}
+.tab-list {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.tab-s {
+  list-style: none;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.modal-style {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 /*
 Smaller Screens
@@ -300,5 +338,13 @@ Smaller Screens
 @media (max-width: 479px) {
   .authCard {
     width: 90%;
+  }
+  .btnSignup {
+    padding-right: 2em;
+  }
+
+  .autheader {
+    display: flex;
+    flex-direction: column;
   }
 }

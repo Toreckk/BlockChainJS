@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
-import { IoIosSend, IoMdDownload } from "react-icons/io";
+import { FaPiedPiperHat } from "react-icons/fa";
 
 const WalletCard = props => {
   return (
@@ -10,41 +10,19 @@ const WalletCard = props => {
         className="balance-card-title d-flex justify-content-start"
         syle={{ fontWeight: "500", color: "#494949" }}
       >
-        Account Statistics:
+        QUICK MENU
       </div>
-      <button
-        className="wallet-card-button"
-        style={{
-          color: "black",
-          borderRadius: "0px 0px 0px 0px",
-          borderTop: "none"
-        }}
-      >
-        {props.blocks} Blocks Mined
-      </button>
-      <button
-        className="wallet-card-button"
-        style={{ color: "black", borderRadius: "0px 0px 0px 0px" }}
-      >
-        {props.transactions} Transactions
-      </button>
+      <div className="balance-card-amount d-flex flex-direction-column align-items-center">
+        Difficulty: 2
+      </div>
       <div
-        className="p-3 d-flex justify-content-around"
-        style={{ borderRadius: "0px 0px 4px 4px", border: "1px solid #d5d5d5" }}
+        className="balance-card-amount d-flex flex-direction-column align-items-center"
+        style={{ borderTop: " 1px solid #d5d5d5" }}
       >
-        <button className="transactionc-btn">
-          <IoIosSend style={{ marginRight: "0.33em" }} />
-          Send
-        </button>
-        <button className="transactionc-btn">
-          <IoMdDownload
-            style={{
-              marginRight: "0.33em"
-            }}
-          />
-          Request
-        </button>
+        Mining Reward: 50 Jaycoins
       </div>
+
+      <button className="balance-card-button">Mine Coin</button>
     </Card>
   );
 };

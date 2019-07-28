@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import FeatureCard from "./FeatureCard";
 import { Link } from "react-router-dom";
 import AppNavbar from "./AppNavbar";
+import { withRouter } from "react-router";
 
 const Landing = () => {
   return (
@@ -129,4 +130,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default withRouter(Landing);

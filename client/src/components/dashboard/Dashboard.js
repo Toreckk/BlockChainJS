@@ -44,15 +44,18 @@ const Dashboard = props => {
       <Container>
         <Row className="mt-5">
           <Col sm="12" md="3">
-            <div>
+            <div className="mb-3">
               <BalanceCard amount={5} />
             </div>
-            <div className="mt-3">
+            <div className="mb-3">
               <WalletCard blocks={2} transactions={21} />
             </div>
           </Col>
-          <Col sm="12" md="9">
+          <Col sm="12" md="6" className="mb-3">
             <DashboardCard />
+          </Col>
+          <Col sm="12" md="3" className="mb-3">
+            <BalanceCard amount={5} />
           </Col>
         </Row>
       </Container>
