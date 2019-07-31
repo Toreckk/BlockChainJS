@@ -10,11 +10,13 @@ import {
   Input
 } from "reactstrap";
 import { IoIosSend } from "react-icons/io";
+import { FaAngleDown, FaPiedPiperHat } from "react-icons/fa";
 
 class SendModal extends Component {
   state = {
     modal: false,
-    name: ""
+    toAddress: "",
+    amount: ""
   };
 
   toggle = () => {
@@ -49,29 +51,61 @@ class SendModal extends Component {
           Send
         </button>
         <Modal
-          className="modal-style"
+          className="modal-style d-flex"
           isOpen={this.state.modal}
           toggle={this.toggle}
+          style={{ width: "400px" }}
         >
           <ModalHeader toggle={this.toggle}>
-            <IoIosSend /> Send Jaycoin
+            <IoIosSend style={{ color: "#0e3578" }} /> Send Jaycoin
           </ModalHeader>
           <ModalBody>
+            <div className="d-flex flex-direction-row justify-content-between">
+              <div className="d-flex flex-column">
+                <p>Currency</p>
+                <div className="send-form-input d-flex justify-content-start">
+                  <FaPiedPiperHat
+                    style={{
+                      color: "green",
+                      marginRight: "0.3em",
+                      height: "1.4em"
+                    }}
+                  />
+                  Jaycoin
+                </div>
+              </div>
+              <div xs="6" sm="6" className="d-flex flex-column ml-3">
+                <p>From</p>
+                <div className="send-form-input">My Wallet - 5 Jaycoin</div>
+              </div>
+            </div>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for="item">Item</Label>
+                <Label for="toAddress" className="mt-3">
+                  To
+                </Label>
                 <Input
                   type="text"
-                  name="name"
-                  id="item"
-                  placeholder="Add item"
+                  name="toAddress"
+                  id="toAddress"
+                  placeholder="Paste a public key"
+                  onChange={this.onChange}
+                />
+                <Label for="amount" className="mt-3">
+                  Amount
+                </Label>
+                <Input
+                  type="text"
+                  name="amount"
+                  id="amount"
+                  placeholder="0"
                   onChange={this.onChange}
                 />
                 <Button
                   style={{ marginTop: "2rem", backgroundColor: "#0D6CF2" }}
                   block
                 >
-                  Add Item
+                  Send
                 </Button>
               </FormGroup>
             </Form>

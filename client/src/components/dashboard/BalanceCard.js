@@ -2,8 +2,8 @@ import React from "react";
 import { Card } from "reactstrap";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
-import { IoIosSend, IoMdDownload } from "react-icons/io";
 import SendModal from "./SendModal";
+import RequestModal from "./RequestModal";
 
 const BalanceCard = props => {
   return (
@@ -25,14 +25,7 @@ const BalanceCard = props => {
         style={{ borderRadius: "0px 0px 4px 4px", border: "1px solid #d5d5d5" }}
       >
         <SendModal />
-        <button className="transactionc-btn">
-          <IoMdDownload
-            style={{
-              marginRight: "0.33em"
-            }}
-          />
-          Request
-        </button>
+        <RequestModal />
       </div>
     </Card>
   );

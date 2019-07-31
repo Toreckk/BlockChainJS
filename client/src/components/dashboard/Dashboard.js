@@ -21,7 +21,7 @@ import { logout } from "../../actions/auth";
 const Dashboard = props => {
   return (
     <div
-      className="d-flex flex-column "
+      className="d-flex flex-column"
       style={{ backgroundColor: "#F5F5F5", height: "100vh" }}
     >
       <div className="autheader">
@@ -35,7 +35,7 @@ const Dashboard = props => {
             tag={Link}
             onClick={props.logout}
             to="/"
-            className="registerBtns registerToLoginbtn ml-3 "
+            className="registerBtns registerToLoginbtn"
           >
             Logout
           </Link>

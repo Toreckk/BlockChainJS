@@ -26,7 +26,7 @@ const DashboardCard = props => {
         RECENT ACTIVITY
       </div>
       <div
-        className="recent-activity-card d-flex flex-direction-row"
+        className="recent-activity-card d-flex flex-direction-row align-content-around"
         style={{ minHeight: "500px" }}
       >
         <Tabs className="tabs">
