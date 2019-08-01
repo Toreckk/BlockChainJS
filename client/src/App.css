@@ -344,6 +344,27 @@ Dashboard
 .modalBody {
   padding-top: 0rem;
 }
+.request-form-address {
+  width: 100%;
+  font-weight: 600;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.5em 3em 0.5em 0.5em;
+  overflow: hidden;
+}
+
+.copy-btn {
+  padding: 0.5em 0.5em;
+  margin-left: 0.25em;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  width: 10%;
+  height: 100%;
+}
+.copy-btn:hover {
+  background-color: #e6e6e6;
+}
 
 /*
 Smaller Screens

@@ -18,7 +18,7 @@ const BalanceCard = props => {
         <FaPiedPiperHat className="JaycoinIcon" size="1.75em" />
         {props.amount}
         <p style={{ marginRight: "0.4em" }} />
-        Jaycoins
+        Jaycoin
       </div>
       <div
         className="p-3 d-flex justify-content-around"

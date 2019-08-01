@@ -10,13 +10,15 @@ import {
   Input
 } from "reactstrap";
 import { IoMdDownload } from "react-icons/io";
-import { FaAngleDown, FaPiedPiperHat } from "react-icons/fa";
+import { FaPiedPiperHat, FaCopy } from "react-icons/fa";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import CopyNotification from "./CopyNotification";
 
 class SendModal extends Component {
   state = {
     modal: false,
-    toAddress: "",
-    amount: ""
+    publicAddress: "115md8GZ5S8CmvUj8a8cW58YcKvv2SekYf",
+    copyNotifOpacity: 0
   };
 
   toggle = () => {
@@ -43,6 +45,13 @@ class SendModal extends Component {
     this.toggle();
   };
 
+  onCopiedToClipboard = () => {
+    this.setState({ copyNotifOpacity: 1 });
+    setTimeout(() => {
+      this.setState({ copyNotifOpacity: 0 });
+    }, 1500);
+  };
+
   render() {
     return (
       <div>
@@ -56,6 +65,7 @@ class SendModal extends Component {
           toggle={this.toggle}
           style={{ width: "400px" }}
         >
+          <CopyNotification opacity={this.state.copyNotifOpacity} />
           <ModalHeader toggle={this.toggle}>
             <IoMdDownload style={{ color: "#0e3578" }} /> Request Jaycoin
           </ModalHeader>
@@ -85,9 +95,29 @@ class SendModal extends Component {
               </div>
               <p style={{ marginTop: "1em", marginBottom: "0" }}>Address</p>
               <div className="d-flex flex-row">
-                <p style={{ maxWidth: "90%" }}>Input</p>
-                <p>Button</p>
+                <p className="request-form-address">
+                  {this.state.publicAddress}
+                </p>
+                <CopyToClipboard text={this.state.publicAddress}>
+                  <button
+                    className="copy-btn"
+                    onClick={this.onCopiedToClipboard}
+                  >
+                    <FaCopy />
+                  </button>
+                </CopyToClipboard>
               </div>
+              <Button
+                onClick={this.toggle}
+                style={{
+                  marginTop: "1rem",
+                  backgroundColor: "#0D6CF2",
+                  fontWeight: "600"
+                }}
+                block
+              >
+                Done
+              </Button>
             </div>
           </ModalBody>
         </Modal>

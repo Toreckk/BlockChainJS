@@ -41,8 +41,8 @@ router.post(
         return res
           .status(400)
           .json({ errors: [{ msg: "User already exists" }] });
-      const key = ec.genKeyPair();
 
+      const key = ec.genKeyPair();
       const publicKey = key.getPublic("hex");
       const privateKey = key.getPrivate("hex");
 
