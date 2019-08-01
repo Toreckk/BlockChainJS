@@ -1,7 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
-import { Link } from "react-router-dom";
-import { FaPiedPiperHat } from "react-icons/fa";
+import { Card } from "reactstrap";
 
 const WalletCard = props => {
   return (

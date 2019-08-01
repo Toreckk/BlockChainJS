@@ -1,19 +1,7 @@
 import React, { Container } from "react";
-import {
-  Nav,
-  NavItem,
-  NavLink,
-  Card,
-  Button,
-  CardTitle,
-  CardText,
-  Row,
-  Col
-} from "reactstrap";
+import { Card } from "reactstrap";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
-import { FaPiedPiperHat } from "react-icons/fa";
-import SendModal from "./SendModal";
+
 import "react-tabs/style/react-tabs.css";
 
 const DashboardCard = props => {

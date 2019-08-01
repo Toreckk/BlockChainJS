@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "reactstrap";
-import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 import SendModal from "./SendModal";
 import RequestModal from "./RequestModal";

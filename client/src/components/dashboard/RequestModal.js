@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Label,
-  Input
-} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import { IoMdDownload } from "react-icons/io";
 import { FaPiedPiperHat, FaCopy } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard";

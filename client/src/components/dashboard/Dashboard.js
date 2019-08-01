@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
+
+import { logout } from "../../actions/auth";
+
 import BalanceCard from "./BalanceCard";
 import WalletCard from "./WalletCard";
 import DashboardCard from "./DashboardCard";
-import { logout } from "../../actions/auth";
+import InfoCard from "./InfoCard";
 
 const Dashboard = props => {
   return (
@@ -55,7 +49,7 @@ const Dashboard = props => {
             <DashboardCard />
           </Col>
           <Col sm="12" md="3" className="mb-3">
-            <BalanceCard amount={5} />
+            <InfoCard />
           </Col>
         </Row>
       </Container>
