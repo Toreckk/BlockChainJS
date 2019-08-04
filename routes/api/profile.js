@@ -41,11 +41,11 @@ router.get("/", auth, (req, res) => {
       const sentTxs = Jaycoin.getSentTransactions(publicKey);
       const receivedTxs = Jaycoin.getReceivedTransactions(publicKey);
       const pendingTxs = Jaycoin.getPendingTransactions(publicKey);
-      console.log("Get profile");
       const minedBlocks = Jaycoin.getMinedBlocks(publicKey);
 
       const difficulty = Jaycoin.getDifficulty();
       const miningReward = Jaycoin.getMiningReward();
+      console.log("Get profile");
 
       const profile = {
         name,
@@ -58,8 +58,7 @@ router.get("/", auth, (req, res) => {
         difficulty,
         miningReward
       };
-
-      res.json(wallet);
+      return res.json(profile);
     })
     .catch(err => res.send(err));
 });

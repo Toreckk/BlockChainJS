@@ -22,7 +22,7 @@ class Blockchain {
   }
 
   getAllPendingTransactions() {
-    return this.pendingTransactions;
+    return JSON.stringify(this.pendingTransactions);
   }
 
   getPendingTransactions(publicKey) {
@@ -32,7 +32,7 @@ class Blockchain {
 
     for (const tx of this.pendingTransactions) {
       if (tx.fromAddress === publicKey || tx.toAddress === publicKey) {
-        pendingTxs.push(tx);
+        pendingTxs.push(JSON.stringify(tx));
       }
     }
     return pendingTxs;
@@ -45,11 +45,12 @@ class Blockchain {
 
     for (const block of this.chain) {
       for (const tx of block.transactions) {
-        if (tx.toAddress === publicKey) {
-          sentTxs.push(tx);
+        if (tx.fromAddress === publicKey) {
+          sentTxs.push(JSON.stringify(tx));
         }
       }
     }
+    return sentTxs;
   }
 
   getReceivedTransactions(publicKey) {
@@ -59,8 +60,8 @@ class Blockchain {
 
     for (const block of this.chain) {
       for (const tx of block.transactions) {
-        if (tx.fromAddress === publicKey) {
-          receivedTxs.push(tx);
+        if (tx.toAddress === publicKey) {
+          receivedTxs.push(JSON.stringify(tx));
         }
       }
     }
@@ -74,15 +75,16 @@ class Blockchain {
   getMinedBlocks(publicKey) {
     if (!publicKey) throw new Error("Need a public Key!");
 
-    minedBlocks = [];
+    let minedBlocks = [];
 
     for (const block of this.chain) {
       for (const tx of block.transactions) {
-        if (tx.fromAddress === null && tx.toAddress === publicKey) {
-          minedBlocks.push(tx);
+        if (tx.toAddress === publicKey && tx.fromAddress === null) {
+          minedBlocks.push(JSON.stringify(block));
         }
       }
     }
+
     return minedBlocks;
   }
 
@@ -99,7 +101,7 @@ class Blockchain {
   }
 
   getMiningReward() {
-    return this.MiningReward;
+    return this.miningReward;
   }
 
   minePendingTransactions(miningRewardAddress) {
