@@ -21,8 +21,68 @@ class Blockchain {
     return this.chain;
   }
 
-  getPendingTransactions() {
+  getAllPendingTransactions() {
     return this.pendingTransactions;
+  }
+
+  getPendingTransactions(publicKey) {
+    if (!publicKey) throw new Error("Need a public Key!");
+
+    let pendingTxs = [];
+
+    for (const tx of this.pendingTransactions) {
+      if (tx.fromAddress === publicKey || tx.toAddress === publicKey) {
+        pendingTxs.push(tx);
+      }
+    }
+    return pendingTxs;
+  }
+
+  getSentTransactions(publicKey) {
+    if (!publicKey) throw new Error("Need a public Key!");
+
+    let sentTxs = [];
+
+    for (const block of this.chain) {
+      for (const tx of block.transactions) {
+        if (tx.toAddress === publicKey) {
+          sentTxs.push(tx);
+        }
+      }
+    }
+  }
+
+  getReceivedTransactions(publicKey) {
+    if (!publicKey) throw new Error("Need a public Key!");
+
+    let receivedTxs = [];
+
+    for (const block of this.chain) {
+      for (const tx of block.transactions) {
+        if (tx.fromAddress === publicKey) {
+          receivedTxs.push(tx);
+        }
+      }
+    }
+
+    return receivedTxs;
+  }
+
+  //To check the blocks mined by a given public address
+  //Check if the fromAddress is null and toAddress = publicAddress
+  //As the null address is used to send the miner reward
+  getMinedBlocks(publicKey) {
+    if (!publicKey) throw new Error("Need a public Key!");
+
+    minedBlocks = [];
+
+    for (const block of this.chain) {
+      for (const tx of block.transactions) {
+        if (tx.fromAddress === null && tx.toAddress === publicKey) {
+          minedBlocks.push(tx);
+        }
+      }
+    }
   }
 
   setDifficulty(difficulty) {
