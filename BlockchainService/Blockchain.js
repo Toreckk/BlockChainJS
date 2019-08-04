@@ -83,6 +83,7 @@ class Blockchain {
         }
       }
     }
+    return minedBlocks;
   }
 
   setDifficulty(difficulty) {
@@ -149,13 +150,13 @@ class Blockchain {
     let balance = 0;
 
     for (const block of this.chain) {
-      for (const trans of block.transactions) {
-        if (trans.fromAddress === address) {
-          balance -= trans.amount;
+      for (const tx of block.transactions) {
+        if (tx.fromAddress === address) {
+          balance -= parseInt(tx.amount);
         }
 
-        if (trans.toAddress === address) {
-          balance += trans.amount;
+        if (tx.toAddress === address) {
+          balance += parseInt(tx.amount);
         }
       }
     }

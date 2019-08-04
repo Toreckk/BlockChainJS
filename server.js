@@ -34,6 +34,7 @@ app.use("/mine", miner);
 app.use("/blockchain", bchain);
 app.use("/transaction", transaction);
 app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/profile", require("./routes/api/profile"));
 
 const port = process.env.PORT || 5000;
 
