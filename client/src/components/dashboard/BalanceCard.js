@@ -6,7 +6,7 @@ import RequestModal from "./RequestModal";
 
 const BalanceCard = props => {
   return (
-    <Card className="balance-card shadow d-flex" text-center>
+    <Card className="balance-card shadow d-flex">
       <div
         className="balance-card-title d-flex justify-content-start"
         syle={{ fontWeight: "500", color: "#494949" }}

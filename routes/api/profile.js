@@ -45,11 +45,11 @@ router.get("/", auth, (req, res) => {
 
       const difficulty = Jaycoin.getDifficulty();
       const miningReward = Jaycoin.getMiningReward();
-      console.log("Get profile");
 
       const profile = {
         name,
         email,
+        publicKey,
         balance,
         sentTxs,
         receivedTxs,

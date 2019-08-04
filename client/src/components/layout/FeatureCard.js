@@ -3,10 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 const FeatureCard = props => {
   return (
-    <Card
-      className="feature-card shadow d-flex align-items-center mb-5"
-      text-center
-    >
+    <Card className="feature-card shadow d-flex align-items-center mb-5">
       <CardImg
         top
         src={props.imgsrc}

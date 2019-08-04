@@ -6,7 +6,7 @@ import "react-tabs/style/react-tabs.css";
 
 const DashboardCard = props => {
   return (
-    <Card className="dashboard-card shadow" text-center>
+    <Card className="dashboard-card shadow">
       <div
         className="balance-card-title d-flex justify-content-start"
         syle={{ fontWeight: "500", color: "#494949" }}

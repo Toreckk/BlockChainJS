@@ -30,7 +30,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       register({ name, email, password });
     }
   };
-  //TODO: Change to redirect to dashboard/ home
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
