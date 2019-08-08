@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
-import { Container } from "reactstrap";
+import { Container, Table } from "reactstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
 
-import { getPendingTransactions } from "../../actions/transactions";
+import { getPendingTransactions } from "../../actions/blockchain";
 
 const Pending = ({ getPendingTransactions, transactions }) => {
   useEffect(() => {
     getPendingTransactions();
-    console.log(typeof pendingTransactions);
-    console.log(JSON.stringify(transactions));
   }, []);
 
   return (
@@ -36,6 +34,27 @@ const Pending = ({ getPendingTransactions, transactions }) => {
           These transactions are waiting to be included in the next block. Next
           block is created when you start the mining process.
         </p>
+        <button>Mine!</button>
+        <Table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Amount</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Gimeno</td>
+              <td>Juan</td>
+              <td>100</td>
+              <td>Today</td>
+            </tr>
+          </tbody>
+        </Table>
       </Container>
     </div>
   );

@@ -4,6 +4,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
+  blockchain: [],
   pendingTransactions: [],
   loading: true,
   error: {}

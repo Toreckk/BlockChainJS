@@ -1,6 +1,5 @@
 import axios from "axios";
 import { GET_PENDING_TRANSACTIONS, PENDING_TRANSACTIONS_ERROR } from "./types";
-import setAuthToken from "../utils/setAuthToken";
 
 export const getPendingTransactions = () => dispatch => {
   axios
