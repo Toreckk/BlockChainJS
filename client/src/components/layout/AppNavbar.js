@@ -70,7 +70,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="#"
+                  href="/pending"
                   style={{ color: "white" }}
                   className="NavBarButtons"
                 >

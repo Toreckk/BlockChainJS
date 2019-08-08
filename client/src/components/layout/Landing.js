@@ -76,7 +76,7 @@ const Landing = () => {
                 imgsrc="https://res.cloudinary.com/toreckk/image/upload/v1563914503/BlockchainJS/Path/pool.webp"
                 title="Mine"
                 text="Verify transactions and start earning Jaycoins"
-                forwardto="/"
+                forwardto="/pending"
               />
             </Col>
             <Col sm="12" md="4">

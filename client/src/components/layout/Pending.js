@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import { Container, Table } from "reactstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,10 +6,47 @@ import { FaPiedPiperHat } from "react-icons/fa";
 
 import { getPendingTransactions } from "../../actions/blockchain";
 
-const Pending = ({ getPendingTransactions, transactions }) => {
+const Pending = ({
+  getPendingTransactions,
+  blockchain: { pendingTransactions, loading }
+}) => {
   useEffect(() => {
     getPendingTransactions();
   }, []);
+
+  let pendingTx = pendingTransactions.map((tx, i) => {
+    return (
+      <tr>
+        <th scope="row">{i}</th>
+        <td
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+          }}
+        >
+          {tx.Hash}
+        </td>
+        <td
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+          }}
+        >
+          {tx.fromAddress}
+        </td>
+        <td
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+          }}
+        >
+          {tx.toAddress}
+        </td>
+        <td>{tx.amount}</td>
+        <td>{tx.timestamp}</td>
+      </tr>
+    );
+  });
 
   return (
     <div
@@ -35,10 +72,16 @@ const Pending = ({ getPendingTransactions, transactions }) => {
           block is created when you start the mining process.
         </p>
         <button>Mine!</button>
-        <Table>
+        <Table
+          style={{
+            width: "100%",
+            tableLayout: "fixed"
+          }}
+        >
           <thead>
             <tr>
               <th>#</th>
+              <th>Hash</th>
               <th>From</th>
               <th>To</th>
               <th>Amount</th>
@@ -46,13 +89,11 @@ const Pending = ({ getPendingTransactions, transactions }) => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Gimeno</td>
-              <td>Juan</td>
-              <td>100</td>
-              <td>Today</td>
-            </tr>
+            {pendingTx === undefined || pendingTx.length === 0 ? (
+              <Fragment />
+            ) : (
+              pendingTx
+            )}
           </tbody>
         </Table>
       </Container>
@@ -61,7 +102,7 @@ const Pending = ({ getPendingTransactions, transactions }) => {
 };
 
 const mapStateToProps = state => ({
-  transactions: state.transactions
+  blockchain: state.blockchain
 });
 
 export default connect(
