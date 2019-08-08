@@ -21,16 +21,20 @@ const DashboardCard = props => {
           <TabList className="tab-list">
             <Tab className="tab-s">Sent</Tab>
             <Tab className="tab-s">Received</Tab>
+            <Tab className="tab-s">Pending</Tab>
             <Tab className="tab-s">Mined</Tab>
           </TabList>
 
-          <TabPanel>
+          <TabPanel className="tab-p">
             <h2>Sent!</h2>
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="tab-p">
             <h2>Received!</h2>
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="tab-p">
+            <h2>Pending!</h2>
+          </TabPanel>
+          <TabPanel className="tab-p">
             <h2>Mined!</h2>
           </TabPanel>
         </Tabs>

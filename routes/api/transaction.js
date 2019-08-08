@@ -37,7 +37,7 @@ router.post("/", auth, (req, res) => {
 //@desc Gets pending transactions
 //@access Public
 router.get("/pending", (req, res) => {
-  return res.json(JSON.stringify(JayCoin.getPendingTransactions()));
+  return res.json(JayCoin.getAllPendingTransactions());
 });
 
 module.exports = router;

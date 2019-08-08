@@ -11,12 +11,12 @@ const InfoCard = props => {
         ACCOUNT INFO
       </div>
 
-      <div className="send-form-input" style={{ marginTop: "0" }}>
+      <div className="balance-card-amount" style={{ marginTop: "0" }}>
         <p style={{ marginBottom: "0" }}>Username:</p>
         {props.username}
       </div>
 
-      <div className="send-form-input" style={{ marginTop: "0" }}>
+      <div className="balance-card-amount" style={{ marginTop: "0" }}>
         <p style={{ marginBottom: "0" }}>Email:</p>
         {props.email}
       </div>

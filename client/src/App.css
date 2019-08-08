@@ -324,6 +324,11 @@ Dashboard
   margin-top: 1em;
   cursor: pointer;
 }
+.tab-p {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
 .modal-style {
   height: 90vh;

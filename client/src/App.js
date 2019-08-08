@@ -9,6 +9,7 @@ import "./App.css";
 import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Pending from "./components/layout/Pending";
 import setAuthToken from "./utils/setAuthToken";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -35,6 +36,7 @@ const App = () => {
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/pending" component={Pending} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </Fragment>

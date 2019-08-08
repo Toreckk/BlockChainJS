@@ -15,7 +15,7 @@ const WalletCard = props => {
       </div>
       <div
         className="balance-card-amount d-flex flex-direction-column align-items-center"
-        style={{ borderTop: " 1px solid #d5d5d5" }}
+        style={{ borderTop: "1px solid #d5d5d5" }}
       >
         Mining Reward: {props.miningReward}
       </div>

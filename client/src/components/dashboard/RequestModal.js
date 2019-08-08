@@ -8,7 +8,8 @@ import CopyNotification from "./CopyNotification";
 class SendModal extends Component {
   state = {
     modal: false,
-    publicAddress: "115md8GZ5S8CmvUj8a8cW58YcKvv2SekYf",
+    publicAddress: this.props.publicKey,
+    balance: this.props.balance,
     copyNotifOpacity: 0
   };
 
@@ -82,7 +83,7 @@ class SendModal extends Component {
               </div>
               <p style={{ marginTop: "1em", marginBottom: "0" }}>To</p>
               <div className="send-form-input" style={{ marginTop: "0" }}>
-                My Wallet - 5 Jaycoin
+                My Wallet - {this.state.balance} JC
               </div>
               <p style={{ marginTop: "1em", marginBottom: "0" }}>Address</p>
               <div className="d-flex flex-row">

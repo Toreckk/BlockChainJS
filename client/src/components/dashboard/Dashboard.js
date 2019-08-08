@@ -52,7 +52,10 @@ const Dashboard = ({
         <Row className="mt-5">
           <Col sm="12" md="3">
             <div className="mb-3">
-              <BalanceCard amount={profile.balance} />
+              <BalanceCard
+                balance={profile.balance}
+                publicKey={profile.publicKey}
+              />
             </div>
             <div className="mb-3">
               <WalletCard

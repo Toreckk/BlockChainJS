@@ -74,9 +74,11 @@ class SendModal extends Component {
                   Jaycoin
                 </div>
               </div>
-              <div xs="6" sm="6" className="d-flex flex-column ml-3">
+              <div xs="6" sm="6" className="d-flex flex-column ml-1">
                 <p>From</p>
-                <div className="send-form-input">My Wallet - 5 Jaycoin</div>
+                <div className="send-form-input">
+                  My Wallet - {this.props.balance} JC
+                </div>
               </div>
             </div>
             <Form onSubmit={this.onSubmit}>

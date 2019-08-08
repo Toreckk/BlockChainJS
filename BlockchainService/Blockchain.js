@@ -22,7 +22,7 @@ class Blockchain {
   }
 
   getAllPendingTransactions() {
-    return JSON.stringify(this.pendingTransactions);
+    return this.pendingTransactions;
   }
 
   getPendingTransactions(publicKey) {
