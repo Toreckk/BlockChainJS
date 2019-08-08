@@ -1,14 +1,18 @@
 import React, { useEffect, Fragment } from "react";
+import PropTypes from "prop-types";
 import { Container, Table } from "reactstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaPiedPiperHat } from "react-icons/fa";
+import moment from "moment";
 
 import { getPendingTransactions } from "../../actions/blockchain";
+import { logout } from "../../actions/auth";
 
 const Pending = ({
   getPendingTransactions,
-  blockchain: { pendingTransactions, loading }
+  blockchain: { pendingTransactions, loading },
+  logout
 }) => {
   useEffect(() => {
     getPendingTransactions();
@@ -17,7 +21,9 @@ const Pending = ({
   let pendingTx = pendingTransactions.map((tx, i) => {
     return (
       <tr>
-        <th scope="row">{i}</th>
+        <th style={{ width: "3%" }} scope="row">
+          {i}
+        </th>
         <td
           style={{
             overflow: "hidden",
@@ -43,7 +49,7 @@ const Pending = ({
           {tx.toAddress}
         </td>
         <td>{tx.amount}</td>
-        <td>{tx.timestamp}</td>
+        <td>{moment(tx.timestamp).format("DD/MM/YYYY HH:mm:ss")}</td>
       </tr>
     );
   });
@@ -60,7 +66,11 @@ const Pending = ({
           Jaycoin
         </Link>
         <div className="d-flex flex-row align-items-center">
-          <Link to="/" className="registerBtns registerToLoginbtn">
+          <Link
+            to="/"
+            onClick={logout}
+            className="registerBtns registerToLoginbtn"
+          >
             Logout
           </Link>
         </div>
@@ -71,7 +81,20 @@ const Pending = ({
           These transactions are waiting to be included in the next block. Next
           block is created when you start the mining process.
         </p>
-        <button>Mine!</button>
+        <button
+          style={{
+            fontWeight: "600",
+            textAlign: "center",
+            color: "white",
+            backgroundColor: "rgb(12, 108, 242)",
+            borderRadius: "4px",
+            padding: "0.5rem 2rem",
+            border: "none"
+          }}
+          className="mb-3"
+        >
+          Mine!
+        </button>
         <Table
           style={{
             width: "100%",
@@ -80,7 +103,7 @@ const Pending = ({
         >
           <thead>
             <tr>
-              <th>#</th>
+              <th style={{ width: "3%" }}>#</th>
               <th>Hash</th>
               <th>From</th>
               <th>To</th>
@@ -101,11 +124,17 @@ const Pending = ({
   );
 };
 
+Pending.propTypes = {
+  logout: PropTypes.func.isRequired,
+  getPendingTransactions: PropTypes.func.isRequired,
+  blockchain: PropTypes.object.isRequired
+};
+
 const mapStateToProps = state => ({
   blockchain: state.blockchain
 });
 
 export default connect(
   mapStateToProps,
-  { getPendingTransactions }
+  { getPendingTransactions, logout }
 )(Pending);

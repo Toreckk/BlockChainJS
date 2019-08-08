@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "reactstrap";
+import { Card, NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const WalletCard = props => {
   return (
@@ -20,7 +21,14 @@ const WalletCard = props => {
         Mining Reward: {props.miningReward}
       </div>
 
-      <button className="balance-card-button">Mine Coin</button>
+      <NavLink
+        tag={Link}
+        to="/pending"
+        className="balance-card-button"
+        style={{ textAlign: "center", fontWeight: "600", padding: "1rem 0" }}
+      >
+        Mine Coin
+      </NavLink>
     </Card>
   );
 };

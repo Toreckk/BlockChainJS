@@ -36,7 +36,7 @@ const App = () => {
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/pending" component={Pending} />
+            <PrivateRoute exact path="/pending" component={Pending} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </Fragment>
