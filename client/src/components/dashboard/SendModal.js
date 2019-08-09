@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import {
   Button,
   Modal,
@@ -10,14 +11,21 @@ import {
   Input
 } from "reactstrap";
 import { IoIosSend } from "react-icons/io";
-import { FaAngleDown, FaPiedPiperHat } from "react-icons/fa";
+import { connect } from "react-redux";
+import { FaPiedPiperHat } from "react-icons/fa";
+
+import { sendTransaction } from "../../actions/blockchain";
 
 class SendModal extends Component {
-  state = {
-    modal: false,
-    toAddress: "",
-    amount: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modal: false,
+      toAddress: "",
+      amount: ""
+    };
+  }
 
   toggle = () => {
     this.setState({
@@ -106,6 +114,13 @@ class SendModal extends Component {
                 <Button
                   style={{ marginTop: "2rem", backgroundColor: "#0D6CF2" }}
                   block
+                  onClick={() => {
+                    this.props.sendTransaction(
+                      this.state.amount,
+                      this.state.toAddress
+                    );
+                    this.toggle();
+                  }}
                 >
                   Send
                 </Button>
@@ -118,4 +133,18 @@ class SendModal extends Component {
   }
 }
 
-export default SendModal;
+SendModal.propTypes = {
+  profile: PropTypes.object.isRequired,
+  blockchain: PropTypes.object.isRequired,
+  sendTransaction: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  blockchain: state.blockchain,
+  profile: state.profile
+});
+
+export default connect(
+  mapStateToProps,
+  { sendTransaction }
+)(SendModal);

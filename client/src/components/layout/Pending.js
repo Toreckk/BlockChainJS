@@ -8,13 +8,19 @@ import moment from "moment";
 
 import { getPendingTransactions } from "../../actions/blockchain";
 import { logout } from "../../actions/auth";
+import { getProfile } from "../../actions/profile";
+import { minePendingTransactions } from "../../actions/blockchain";
 
 const Pending = ({
   getPendingTransactions,
   blockchain: { pendingTransactions, loading },
-  logout
+  logout,
+  getProfile,
+  profile: { profile },
+  minePendingTransactions
 }) => {
   useEffect(() => {
+    getProfile();
     getPendingTransactions();
   }, []);
 
@@ -92,10 +98,15 @@ const Pending = ({
             border: "none"
           }}
           className="mb-3"
+          onClick={() => {
+            minePendingTransactions(profile.publicKey);
+          }}
         >
           Mine!
         </button>
+
         <Table
+          className="table-striped table-hover"
           style={{
             width: "100%",
             tableLayout: "fixed"
@@ -127,14 +138,18 @@ const Pending = ({
 Pending.propTypes = {
   logout: PropTypes.func.isRequired,
   getPendingTransactions: PropTypes.func.isRequired,
-  blockchain: PropTypes.object.isRequired
+  blockchain: PropTypes.object.isRequired,
+  getProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
+  minePendingTransactions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  blockchain: state.blockchain
+  blockchain: state.blockchain,
+  profile: state.profile
 });
 
 export default connect(
   mapStateToProps,
-  { getPendingTransactions, logout }
+  { getPendingTransactions, logout, getProfile, minePendingTransactions }
 )(Pending);

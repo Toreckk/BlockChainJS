@@ -9,6 +9,7 @@ const DashboardCard = props => {
   let txTables = Tx => {
     return (
       <Table
+        className="table-striped table-hover"
         style={{
           width: "100%",
           tableLayout: "fixed"
