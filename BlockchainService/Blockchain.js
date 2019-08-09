@@ -32,7 +32,7 @@ class Blockchain {
 
     for (const tx of this.pendingTransactions) {
       if (tx.fromAddress === publicKey || tx.toAddress === publicKey) {
-        pendingTxs.push(JSON.stringify(tx));
+        pendingTxs.push(tx);
       }
     }
     return pendingTxs;
@@ -46,7 +46,7 @@ class Blockchain {
     for (const block of this.chain) {
       for (const tx of block.transactions) {
         if (tx.fromAddress === publicKey) {
-          sentTxs.push(JSON.stringify(tx));
+          sentTxs.push(tx);
         }
       }
     }
@@ -61,7 +61,7 @@ class Blockchain {
     for (const block of this.chain) {
       for (const tx of block.transactions) {
         if (tx.toAddress === publicKey) {
-          receivedTxs.push(JSON.stringify(tx));
+          receivedTxs.push(tx);
         }
       }
     }
@@ -80,7 +80,7 @@ class Blockchain {
     for (const block of this.chain) {
       for (const tx of block.transactions) {
         if (tx.toAddress === publicKey && tx.fromAddress === null) {
-          minedBlocks.push(JSON.stringify(block));
+          minedBlocks.push(block);
         }
       }
     }

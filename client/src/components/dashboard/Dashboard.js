@@ -30,7 +30,7 @@ const Dashboard = ({
   ) : (
     <div
       className="d-flex flex-column"
-      style={{ backgroundColor: "#F5F5F5", height: "100vh" }}
+      style={{ backgroundColor: "#F5F5F5", height: "auto" }}
     >
       <div className="autheader">
         <Link className="logoName registerBtns d-flex" to="/">
@@ -49,8 +49,8 @@ const Dashboard = ({
         </div>
       </div>
       <Container>
-        <Row className="mt-5">
-          <Col sm="12" md="3">
+        <Row className="mt-4">
+          <Col sm="12" md="3" style={{ positifon: "fixed" }}>
             <div className="mb-3">
               <BalanceCard
                 balance={profile.balance}
@@ -63,12 +63,12 @@ const Dashboard = ({
                 miningReward={profile.miningReward}
               />
             </div>
+            <div className="mb-3">
+              <InfoCard username={profile.name} email={profile.email} />
+            </div>
           </Col>
-          <Col sm="12" md="6" className="mb-3">
-            <DashboardCard />
-          </Col>
-          <Col sm="12" md="3" className="mb-3">
-            <InfoCard username={profile.name} email={profile.email} />
+          <Col sm="12" md="9" className="mb-3">
+            <DashboardCard profile={profile} />
           </Col>
         </Row>
       </Container>
