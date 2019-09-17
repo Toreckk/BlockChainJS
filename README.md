@@ -1,2 +1,3 @@
 # BlockchainJS
- A Javascript blockchain implementation that allows you to send, receive, store and mine the fictional Jaycoin currency  for demonstration and learning purposes.
+
+The Jaycoin blockchain was created for demonstration and learning purposes. Since it does not have a P2P functionality it cannot used in a public network. It nonetheless implements the basic features for a functioning blockchain.
